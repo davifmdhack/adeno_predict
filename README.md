@@ -4,7 +4,7 @@
 
 <div align = "center";> 
 
-## Authors | Co-Authors
+## GitHub Page Authors
 
 #### *Davi Ferreira MD., MSc.* 
 [![Send e-mail to Davi Ferreira](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:davi.ferreira.soares@gmail.com)
@@ -15,15 +15,14 @@
 
 ## **Introduction**
 <p style="text-align: justify;">
-  
+
 This repository (__Adeno Predict__) serves the purpose of applying machine learning algorithms to predict the consistency of pituitary macroadenomas from demographic data and brain MRI parameters. 
 The objective of this application is to optimize the ability to predict non-soft tumors and consequently improve surgical planning and ultimately reduce post-surgical complications.    
-  
+
 Using a database of 70 patients from Hospital de Clínicas of the State University of Campinas (HC- UNICAMP). Applying pre-determined inclusion and exclusion criteria, with the aim 
 of avoiding methodological biases, two datasets were analyzed, analysis_clear (n = 53) and analysis_imputed (n=59). The latter is the result of imputation of missing data for six values 
-of the Apparent diffusion coefficient (ADC) variable from brain MRI, using multiple imputation by chain  equations (MICE) with Bayesian Ridge regression. Our group opted for the following 
-classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Naive Bayes (NB), Support Vector Machine (SVM) and Ensemble (considering the sum of the prediction probability for 
-non-soft consistency of the best model of each algorithm).
+of the Apparent diffusion coefficient (ADC) variable from brain MRI, using multiple imputation by chain equations (MICE), more details in `imputation` folder. 
+Our group opted for the following classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Naive Bayes (NB), Support Vector Machine (SVM) and Ensemble of all best models. 
 
 In this repository, we divided the codes according to the following steps: example of dataset (`dataset__example.csv`), data pre-processing (`pre_process` folder), imputation of missing values 
 for ADC (`imputation` folder), tunning flow for training and obtaining the best model in the test for the algorithms (`workflow_algorithms` folder), metrics and bootstrap (`metrics_boot` folder).
@@ -32,20 +31,17 @@ for ADC (`imputation` folder), tunning flow for training and obtaining the best 
 
 ## **Dataset format**
 <p style="text-align: justify;">
-  
+ 
 Because data collection was carried out in a single research center, it was not necessary to build a server, implement a cluster or distributed processing. The database was built similar to 
-the available file `dataset_example.csv` with single acess __PATH__ in domestic domain.
+the available file `dataset_example.csv` with single acess __PATH__ in domestic domain. The features used were described in `features_detail.md`. 
 
 </p>
 
 ## **Pre-processing**
 <p style="text-align: justify;">
   
-Innitialy, we excluded the `ID` feature (sensitive data). We standardized attribute names and content of categorical variables. The dataset was divided into analysis_clear and analysis_imputed, 
-with the attributes `ki67` and `pathology` initially excluded from **analysis_clear** and from **analysis_imputed** after the imputation process so as to have the greatest amount of aggregated information 
-for predicting missing data. Missing consistency values were removed, considering that there is no simultaneity of missing values for `adc` and `consistency`. In both datasets, One Hot Encoder was 
-applied to the variable `sex` and an upsampling process was applied, thus totaling **analysis_clear** to a total of 86 and **analysis_imputed** to a total of 96. Normalization or standardization was 
-applied to the pipeline of each algorithm (see in `workflow_algorithms` folder).
+We excluded sensitive features, and those associated with surgery process after imputation process. At this point, two datasets were made: **analysis_clear**, after randomized upsampling process 
+n = 86, and **analysis_imputed** with n = 96 after upsampling.
 
 </p>
 
@@ -68,38 +64,30 @@ to apply the same criteria to future datasets with the presence of missing data.
 
 ## **Metrics and bootstrap implementation**
 
-We use the following table in both datasets  
+We used the following metrics considering the nature of the problem and its unbalanced data: Area Under Curve (AUC) of Receiver Operating Curve (ROC), accuracy, sensibility (or recall), specificity, 
+F1 score and Matthew coefficient (MCC). The formulas are derived from the confusion matrix as follows:
 
-| Model    | AUC  | Accuracy | Sensibility | Specificity | F1 Score | MCC Score |
-|----------|------|----------|-------------|-------------|----------|-----------|
-|**data_set**   |        |   |             |             |          |           |
-| DT       |      |          |             |             |          |           |
-| KNN      |      |          |             |             |          |           |
-| NB       |      |          |             |             |          |           |
-| SVM      |      |          |             |             |          |           |
-| Ensemble |      |          |             |             |          |           |
+<div align="center">
 
-*Legend: 
+|                      | **Predicted Positive** | **Predicted Negative** |
+|:--------------------:|:----------------------:|:----------------------:|
+| **Actual Positive**  | True Positive (TP)     | False Negative (FN)    |
+| **Actual Negative**  | False Positive (FP)    | True Negative (TN)     |
 
-<br>
+</div>
 
-The formulas are derived from the confusion matrix as follows:
-
-|                   | **Predicted Positive** | **Predicted Negative** |
-|-------------------|:----------------------:|:----------------------:|
-| **Actual Positive** | True Positive (TP)     | False Negative (FN)    |
-| **Actual Negative** | False Positive (FP)    | True Negative (TN)     |
+### **The mathematical expression:**
 
 <br>
 
 $$
-\text{AUC} = \displaystyle\int_{0}^{1} TP(FP) \, dFP \ \ \ \  \xrightarrow{\text{or}}  \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP^{-1}(x))  \, \ dx
+(1) \ \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP) \, dFP \ \ \ \  \xrightarrow{\text{or}}  \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP^{-1}(x))  \, \ dx
 $$
 
 <br>
 
 $$
-\text{Accuracy} = \dfrac{(TP + TN)}{(TP + TN + FP + FN)}
+(2) \ \ \ \ \  \text{Accuracy} = \dfrac{(TP + TN)}{(TP + TN + FP + FN)}
 $$
 
 <br>
@@ -150,3 +138,19 @@ $$
 
 The confidence interval is then given by $\( \left[ \theta^*_{(\frac{\alpha}{2})}, \theta^*_{(1-\frac{\alpha}{2})} \right] \)$.]
 
+
+
+
+
+
+
+$$ 
+\begin{align*}
+& \text{AUC} = \int_{0}^{1} TP(FP) \, dFP \ \ \ \ \xrightarrow{\text{or}} \ \ \ \ \text{AUC} = \int_{0}^{1} TP(FP^{-1}(x)) \, dx &\
+& \text{Accuracy} = \dfrac{(TP + TN)}{(TP + TN + FP + FN)} &\
+& \text{Sensitivity} = \dfrac{TP}{(TP + FN)} &\
+& \text{Specificity} = \dfrac{TN}{(TN + FP)} &\
+& \text{F1 Score} = \dfrac{TP}{\left[TP + \dfrac{1}{2} \cdot (FP + FN)\right]} &\
+& \text{MCC Score} = \dfrac{(TP \cdot TN - FP \cdot FN)}{\sqrt{(TP + FP) \cdot (TP + FN) \cdot (TN + FP) \cdot (TN + FN)}} &\
+\end{align*}
+$$
