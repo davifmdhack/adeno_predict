@@ -2,9 +2,9 @@
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/4d219850-2f80-481e-b1f3-32b4efb85165" alt="Slide12" style="width: 256px; border-radius: 20px;"/>
 </div>
 
-<div align = "center";>
-  
-##  **Authors GitHub page | Co-Authors article**
+<div align = "center";> 
+
+## Authors | Co-Authors
 
 #### *Davi Ferreira MD., MSc.* 
 [![Send e-mail to Davi Ferreira](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:davi.ferreira.soares@gmail.com)
@@ -12,14 +12,6 @@
 [![Send e-mail to Fernanda](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fernandavelosop@gmail.com)
 
 </div>
-
-<p align="left">
-<strong> Authors </strong>
-<a href="https://github.com/davifmdhack/adeno_predict">
-<img alt="GitHub Pages badge" src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white"/>
-</a>
-<strong>| Co-Authors</strong>
-</p>
 
 ## **Introduction**
 <p style="text-align: justify;">
