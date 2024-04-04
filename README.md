@@ -122,19 +122,28 @@ performance metric without needing to make any assumptions about the distributio
 Interval Calculation. For each steop, we describe brefly.
 
 </p>
+1 Resampling:
 
-1. Resampling:
-   
 Let $(D)$ be the original dataset containing $(N)$ data points, i.e., $D = d_1, d_2, ..., d_{N}$. Generate $(B)$ bootstrap samples $(D^\*_1, D^\*_2, ..., D^\*_B)$, where each $(D^\*_i)$ is a set of $(N)$ 
 data points drawn with replacement from $(D)$
 
-2. Statistic or Model Evaltuation
+2 Statistic or Model Evaltuation
 
 For each bootstrap sample $(D^\*_i)$, train your model and evaluate its performance metric $(\theta^\*_i)$
 
-3. Confidence Interval Calculation.
+3 Confidence Interval Calculation
 
-Sort the bootstrap performance metrics $(\theta^\*_1, \theta^\*_2, ..., \theta^\*_B)$ in ascending order. For a $(1-\alpha) \cdot 100 \\%)$ confidence interval, find the $((\frac{\alpha}{2})\text{th})$ and $((1-\frac{\alpha}{2})\text{th})$ 
-percentiles of the bootstrap performance metrics, denoted as $\( \theta^*_{(\frac{\alpha}{2})} \)$ and $\( \theta^*_{(1-\frac{\alpha}{2})} \)$, respectively
+Sort the bootstrap performance metrics $(\theta^\*_1, \theta^\*_2, ..., \theta^\*_B)$ in ascending order. 
+
+For a $(1-\alpha) \cdot 100 \\%$ confidence interval, find the $(\frac{\alpha}{2})$ and $(1-\frac{\alpha}{2})$ percentiles of the bootstrap performance metrics,   
+
+denoted as $\theta^\*_{\alpha /2}$ and  $\theta^\*_{(1-\alpha /2)}$, respectively.
+
+
+
+
+
+
+
 
 The confidence interval is then given by $\( \left[ \theta^*_{(\frac{\alpha}{2})}, \theta^*_{(1-\frac{\alpha}{2})} \right] \)$.]
