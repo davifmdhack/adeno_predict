@@ -13,6 +13,14 @@
 
 </div>
 
+<p align="left">
+<strong> Authors </strong>
+<a href="https://github.com/davifmdhack/adeno_predict">
+<img alt="GitHub Pages badge" src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=GitHub%20Pages&logoColor=white"/>
+</a>
+<strong>| Co-Authors</strong>
+</p>
+
 ## **Introduction**
 <p style="text-align: justify;">
   
