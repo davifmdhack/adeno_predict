@@ -39,11 +39,30 @@ the available file `dataset_example.csv` with single acess __PATH__ in domestic 
 </p>
 
 ## **Pre-processing**
+<p style="text-align: justify;">
+  
+Innitialy, we excluded the `ID` feature (sensitive data). We standardized attribute names and content of categorical variables. The dataset was divided into analysis_clear and analysis_imputed, 
+with the attributes `ki67` and `pathology` initially excluded from **analysis_clear** and from **analysis_imputed** after the imputation process so as to have the greatest amount of aggregated information 
+for predicting missing data. Missing consistency values were removed, considering that there is no simultaneity of missing values for `adc` and `consistency`. In both datasets, One Hot Encoder was 
+applied to the variable `sex` and an upsampling process was applied, thus totaling **analysis_clear** to a total of 86 and **analysis_imputed** to a total of 96. Normalization or standardization was 
+applied to the pipeline of each algorithm (see in `workflow_algorithms` folder).
 
+</p>
 
 ## **Imputation missing values**
 
+<p style="text-align: justify;">
+
+</p>
+
 ## **Workflow algorithms**
+
+<p style="text-align: justify;">
+
+</p>
 
 ## **Metrics and bootstrap implementation**
 
+<p style="text-align: justify;">
+
+</p>
