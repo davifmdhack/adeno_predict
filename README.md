@@ -53,16 +53,75 @@ applied to the pipeline of each algorithm (see in `workflow_algorithms` folder).
 
 <p style="text-align: justify;">
 
+The MICE imputation method was used to reduce the ignorability of missing data, since imputation (using appropriate criteria) increases the variability and reliability of the derived machine learning models.
+This step is one of the reasons for collecting post-surgery information (KI 67 and histopathological data) to improve the ability to predict missing values. In the `imputation` folder, a function was developed 
+to apply the same criteria to future datasets with the presence of missing data.
+
 </p>
 
 ## **Workflow algorithms**
 
 <p style="text-align: justify;">
 
+
 </p>
 
 ## **Metrics and bootstrap implementation**
 
-<p style="text-align: justify;">
+We use the following table in both datasets  
 
-</p>
+| Model    | AUC  | Accuracy | Sensibility | Specificity | F1 Score | MCC Score |
+|----------|------|----------|-------------|-------------|----------|-----------|
+|**data_set**   |        |   |             |             |          |           |
+| DT       |      |          |             |             |          |           |
+| KNN      |      |          |             |             |          |           |
+| NB       |      |          |             |             |          |           |
+| SVM      |      |          |             |             |          |           |
+| Ensemble |      |          |             |             |          |           |
+
+*Legend: 
+
+<br>
+
+The formulas are derived from the confusion matrix as follows:
+
+|                   | **Predicted Positive** | **Predicted Negative** |
+|-------------------|:----------------------:|:----------------------:|
+| **Actual Positive** | True Positive (TP)     | False Negative (FN)    |
+| **Actual Negative** | False Positive (FP)    | True Negative (TN)     |
+
+<br>
+
+$$
+\text{AUC} = \displaystyle\int_{0}^{1} TP(FP) \, dFP \ \ \ \  \xrightarrow{\text{or}}  \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP^{-1}(x))  \, \ dx
+$$
+
+<br>
+
+$$
+\text{Accuracy} = \dfrac{(TP + TN)}{(TP + TN + FP + FN)}
+$$
+
+<br>
+
+$$
+\text{Sensitivity} = \dfrac{TP}{(TP + FN)}
+$$
+
+<br>
+
+$$
+\text{Specificity} = \dfrac{TN}{(TN + FP)}
+$$
+
+<br>
+
+$$
+\text{F1 Score} = \dfrac{TP}{\left[TP + \dfrac{1}{2} \cdot (FP + FN)\right]}
+$$
+
+<br>
+
+$$
+\text{MCC Score} = \dfrac{(TP \cdot TN - FP \cdot FN)}{\sqrt{(TP + FP) \cdot (TP + FN) \cdot (TN + FP) \cdot (TN + FN)}}
+$$
