@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/4d219850-2f80-481e-b1f3-32b4efb85165" alt="Slide12" style="width: 256px; border-radius: 20px;"/>
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec9ac98-0aee-488e-bfbe-b18b8f6d2053" alt="logos" style="width: 256px; border-radius: 20px;"/>
 </div>
 
 <div align = "center";> 
