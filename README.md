@@ -83,11 +83,26 @@ We used the following metrics considering the nature of the problem and its unba
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/e6d5f07a-c321-4c16-bd76-78817fc2b13b" alt="Under Construction" style="width: 200px;">
 </div>
 
-
-
 ## **References**
 1. Van Buuren, S. (2018) Flexible Imputation of Missing Data. 2nd Edition, CRC Press, Boca Raton. https://doi.org/10.1201/9780429492259
 2. Mas̕s, S. (2021). Interpretable Machine Learning with Python : Learn to Build Interpretable High-performance Models with Hands-on Real-world Examples. 1st Edition, Packt Publishing, Birmingham. 
 3. Garbin, C., & Marques, O. (2022). Assessing Methods and Tools to Improve Reporting, Increase Transparency, and Reduce Failures in Machine Learning Applications in Health Care. Radiology: Artificial Intelligence, 4(2). https://doi.org/10.1148/ryai.210127
 4. Rouzrokh, P., Khosravi, B., Faghani, S., Moassefi, M., Garcia, D. V. V., Singh, Y., Zhang, K., Conte, G. M., & Erickson, B. J. (2022). Mitigating Bias in Radiology Machine Learning: 1. Data Handling. Radiology: Artificial Intelligence, 4(5). https://doi.org/10.1148/ryai.210290
 5. Faghani, S., Khosravi, B., Zhang, K., Moassefi, M., Jagtap, J. M., Nugen, F., Vahdati, S., Kuanar, S. P., Rassoulinejad-Mousavi, S. M., Singh, Y., Vera Garcia, D. v., Rouzrokh, P., & Erickson, B. J. (2022). Mitigating Bias in Radiology Machine Learning: 3. Performance Metrics. Radiology: Artificial Intelligence, 4(5). https://doi.org/10.1148/ryai.220061
+
+
+## **Institutional** 
+</br>
+<div style="float: left;">
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 250px;">
+</div>
+School of Medical Sciences State University of Campinas - FCM/UNICAMP
+
+<hr style="width: 50%;">
+</br>
+<div style="float: left;">
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/78c66f70-c8c5-46b8-8f85-d5aaff665d01" alt="logo_hc_unicamp" style="width: 250px;">
+</div>
+Unicamp Clinical Hospital - HC/UNICAMP
+
+
