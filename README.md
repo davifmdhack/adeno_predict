@@ -69,7 +69,7 @@ used to hyperparameterize the models until finding the `best_model` for each alg
 ## **Metrics and bootstrap implementation**
 
 We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC), (2) Accuracy, (3) Sensibility (or recall), (4) Specificity, 
-(5) F1 score and (6) Matthew correlation coefficient (MCC). Accuracy was used only for comparative purposes with other metrics. The formulas and bootsrap techniques are described in `metrics_boot` folder.
+(5) F1 score and (6) Matthew Correlation Coefficient (MCC). Accuracy was used only for comparative purposes with other metrics. The formulas and bootsrap techniques are described in `metrics_boot` folder.
 
 
 ## **Repository cloning and application of the model to domestic dataset**
