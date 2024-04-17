@@ -25,7 +25,9 @@ of the Apparent diffusion coefficient (ADC) variable from brain MRI, using multi
 Our group opted for the following classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Naive Bayes (NB), Support Vector Machine (SVM) and Ensemble of all best models. 
 
 In this repository, we divided the codes according to the following steps: example of dataset (`dataset__example.csv`), data pre-processing (`pre_process` folder), imputation of missing values 
-for ADC (`imputation` folder), tunning flow for training and obtaining the best model in the test for the algorithms (`workflow_algorithms` folder), metrics and bootstrap (`metrics_boot` folder).
+for ADC (`imputation` folder), tunning flow for training and obtaining the best model in the test for the algorithms (`workflow_algorithms` folder), metrics and bootstrap (`metrics_boot` folder).  
+
+We are building the session to clone the repository and apply our trained model to local datasets.It will be available in the future at `clone_repository` folder. 
 
 </p>
 
@@ -57,8 +59,10 @@ to apply the same criteria to future datasets with the presence of missing data.
 
 ## **Workflow algorithms**
 
-<p style="text-align: justify;">
 
+<p style="text-align: justify;">
+We apply pipeline from scikit-learn of the pre-processed dataset for each algorithm, considering particularities such as standardization of numerical variables. A cross-validation method using Strafied KFold was 
+used to hyperparameterize the models until finding the `best_model` for each algorithm.The standardized code can be found at `workflow_algorithms` folder. 
 
 </p>
 
@@ -66,6 +70,20 @@ to apply the same criteria to future datasets with the presence of missing data.
 
 We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC), (2) Accuracy, (3) Sensibility (or recall), (4) Specificity, 
 (5) F1 score and (6) Matthew correlation coefficient (MCC). Accuracy was used only for comparative purposes with other metrics. The formulas and bootsrap techniques are described in `metrics_boot` folder.
+
+
+## **Repository cloning and application of the model to domestic dataset**
+<div align="center"> 
+  
+  ### **UNDER CONSTRUCTION**
+  
+</div>
+
+<div align="center">
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/e6d5f07a-c321-4c16-bd76-78817fc2b13b" alt="Under Construction" style="width: 200px;">
+</div>
+
+
 
 ## **References**
 1. Van Buuren, S. (2018) Flexible Imputation of Missing Data. 2nd Edition, CRC Press, Boca Raton. https://doi.org/10.1201/9780429492259
