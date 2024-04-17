@@ -51,31 +51,12 @@ $$
 
 ## **Bootstrap implementation**
 The bootstrap method is a powerful statistical tool used to estimate the distribution of a statistic. Bootstrap method can be particularly useful for estimating the confidence intervals of a model's 
-performance metric without needing to make any assumptions about the distribution of the underlying data. The technique is divided into: 1. Resampling, 2. Statistic or Model Evaltuation 3. Confidence 
-Interval Calculation. For each steop, we describe brefly.
+performance metric without needing to make any assumptions about the distribution of the underlying data.
+Considering $D$ original dataset containing $N$ data points, i.e, $D = d_1, d_2, ..., d_{N}$, generating $B$ bootstrap samples $(D^\*_1, D^\*_2, ..., D^\*_B)$,  where each $D^\*_i$ is a set of $N$ data points drawn with replacement from $D$.For each $D^\*_i$, its performance metric $θ\^*_i$. Therefore, the confidence interval calculation is calculated from:  
 
-</p>
-1 Resampling:
+1. Sort performance metrics in asceding order { $\theta^\*_1$, $\theta^\*_2$, ..., $\theta^\*_B$ }
+2. For a $(1- \alpha)\cdot 100 \%$ confidence, the confidence interval is given by:
 
-Let $(D)$ be the original dataset containing $(N)$ data points, i.e., $D = d_1, d_2, ..., d_{N}$. Generate $(B)$ bootstrap samples $(D^\*_1, D^\*_2, ..., D^\*_B)$, where each $(D^\*_i)$ is a set of $(N)$ 
-data points drawn with replacement from $(D)$
-
-2 Statistic or Model Evaltuation
-
-For each bootstrap sample $(D^\*_i)$, train your model and evaluate its performance metric $(\theta^\*_i)$
-
-3 Confidence Interval Calculation
-
-Sort the bootstrap performance metrics $(\theta^\*_1, \theta^\*_2, ..., \theta^\*_B)$ in ascending order. 
-
-For a $(1-\alpha) \cdot 100 \\%$ confidence interval, find the $(\frac{\alpha}{2})$ and $(1-\frac{\alpha}{2})$ percentiles of the bootstrap performance metrics,   
-
-denoted as $\theta^\*_{\alpha /2}$ and  $\theta^\*_{(1-\alpha /2)}$, respectively.
-
-
-
-
-
-
-
-The confidence interval is then given by $\( \left[ \theta^*_{(\frac{\alpha}{2})}, \theta^*_{(1-\frac{\alpha}{2})} \right] \)$.]
+$$
+\left[\theta^\*_{\left(\frac{\alpha}{2}\right)}\,  \theta^\*\_{\left(1 - \frac{\alpha}{2}\right)}\right]
+$$ 
