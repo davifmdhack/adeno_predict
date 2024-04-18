@@ -96,13 +96,15 @@ We used the following metrics considering the nature of the problem and its unba
 <div style="float: left;">
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 250px;">
 </div>
-School of Medical Sciences State University of Campinas - FCM/UNICAMP
+
+*School of Medical Sciences State University of Campinas - FCM/UNICAMP*
 
 <hr style="width: 50%;">
 </br>
 <div style="float: left;">
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/78c66f70-c8c5-46b8-8f85-d5aaff665d01" alt="logo_hc_unicamp" style="width: 250px;">
 </div>
-Unicamp Clinical Hospital - HC/UNICAMP
+
+*Unicamp Clinical Hospital - HC/UNICAMP*
 
 
