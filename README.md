@@ -45,8 +45,8 @@ The imputation process was used according to Van Buuren criteria. 6 values for A
 ## **Workflow algorithms**
 <p style="text-align: justify;">
 
-We apply pipeline from scikit-learn of the pre-processed dataset for each algorithm, considering particularities such as standardization of numerical variables. A cross-validation method using Leave-One-Out with
-10 folds for cross-validation process until finding the `best_model` for each algorithm.
+We apply pipeline from scikit-learn of the pre-processed dataset for each algorithm, considering particularities such as standardization of numerical variables. A cross-validation method using Leave-One-Out (`leave_one_out.md`) with
+10 folds for cross-validation process until finding the `best_model` for each algorithm considering the parameters (`algorithms_parameters.md`).
 
 </p>
 
