@@ -107,4 +107,11 @@ We used the following metrics considering the nature of the problem and its unba
 
 *Unicamp Clinical Hospital - HC/UNICAMP*
 
+## **Institutional Partnership**
+</br>
+<div style="float: left;">
+  <img src="https://github.com/user-attachments/assets/667b0548-e899-4306-8a5e-39d4fbd5a1a1" alt="ITA_logo" style="width: 250px;">
+</div>
+
+*Aeronautics Institute of Technology - ITA*
 
