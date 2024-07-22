@@ -3,20 +3,19 @@
 ## **Libraries**  
     import numpy as np
     from sklearn.preprocessing import StandardScaler  
-    from sklearn.model_selection import (train_test_split,
-                                     GridSearchCV)
+    from sklearn.model_selection import (train_test_split, GridSearchCV)
     from sklearn.pipeline import Pipeline
     from sklearn.model_selection import LeaveOneOut
 
 ## **Previously defined variables**
 `model_params` = parameters used for cross-validation  
 `model_clf` = algorithm  
-`model` = algorithm in scikit-learn library  
+`model` = scikit-learn model library  
 `train` = $n$ total of elements, with $(n-1)$ for training  
-`test` =  test from one ($1$) patient, cycling through all ($n$) patients
+`test` =  test from one ($1$) patient, cycling through all ($n$) patients  
+`random_state = 42` $\rightarrow$ for all models, except for ensemble model (`random_state = 0`)
 
 ## **Implementation**
-
     model_params = {
     'parameter_1': [ ], 
     'parameter_2': [ ],
