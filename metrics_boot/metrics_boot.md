@@ -1,5 +1,4 @@
-### **Confusion matrix:**
-
+## **Confusion matrix**
 <div align="center">
 
 |                      | **Predicted Positive** | **Predicted Negative** |
@@ -11,9 +10,7 @@
 
 </br>
 
-### **The mathematical expression:**
-
-<br>
+## **The mathematical expression**
 
 $$
 (1) \ \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP) \, dFP \ \ \ \  \xrightarrow{\text{or}}  \ \ \ \ \text{AUC} = \displaystyle\int_{0}^{1} TP(FP^{-1}(x))  \, \ dx
@@ -49,11 +46,10 @@ $$
 3 - Specificity  
 4 - F1 Score  
 5 - Matthews correlation coefficient (MCC) Score
-
 <p style="text-align: justify;">
-</br>
 
 ## **Bootstrap implementation**
+
 The bootstrap method is a powerful statistical tool used to estimate the distribution of a statistic. Bootstrap method can be particularly useful for estimating the confidence intervals of a model's 
 performance metric without needing to make any assumptions about the distribution of the underlying data.
 Considering $D$ original dataset containing $N$ data points, i.e, $D = d_1, d_2, ..., d_{N}$, generating $B$ bootstrap samples $(B^\*_1, B^\*_2, ..., B^\*_n)$,  where each $B^\*_i$ is a set of $N$ data points drawn with replacement from $D$.For each $B^\*_i$, its performance metric $θ\^*_i$. Therefore, the confidence interval calculation is calculated from:  
