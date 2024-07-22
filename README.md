@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec9ac98-0aee-488e-bfbe-b18b8f6d2053" alt="logos" style="width: 256px; border-radius: 20px;"/>
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec9ac98-0aee-488e-bfbe-b18b8f6d2053" alt="logos" style="width: 350px; border-radius: 30px;"/>
 </div>
 
 <div align = "center";> 
@@ -21,7 +21,7 @@ The objective of this application is to optimize the ability to predict non-soft
 
 Using a database of 70 patients from Hospital de Clínicas of the State University of Campinas (HC- UNICAMP). Our group opted for the following classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Support Vector Machine (SVM) and Ensemble of two best models (DT and SVM). 
 
-In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics` folder).
+In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics` folder).  
 
 We are building the session to clone the repository and apply our trained model to local datasets. It will be available in the future at `clone_repository` folder. 
 
