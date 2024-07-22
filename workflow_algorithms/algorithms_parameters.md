@@ -8,8 +8,9 @@
  `best_model_1` = best model of algortihm 1  
  `best_model_2` = best model of algortihm 2  
  `model_1` =  scikit-learn model 1 library  
- `model_2` =  scikit-learn model 2 library
- 
+ `model_2` =  scikit-learn model 2 library  
+ `random_state = 0` = for ensemble model
+
 ## **Support Vector Machine (SVM) - Parameters**
     svm_params = {
     'classifier__C': [1, 10, 100, 1000], 
