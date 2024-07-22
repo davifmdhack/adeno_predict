@@ -21,7 +21,7 @@ The objective of this application is to optimize the ability to predict non-soft
 
 Using a database of 70 patients from Hospital de Clínicas of the State University of Campinas (HC- UNICAMP). Our group opted for the following classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Support Vector Machine (SVM) and Ensemble of two best models (DT and SVM). 
 
-In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics_boot` folder).
+In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics` folder).
 
 We are building the session to clone the repository and apply our trained model to local datasets. It will be available in the future at `clone_repository` folder. 
 
@@ -38,8 +38,7 @@ the available file `dataset_example.csv` with single acess __PATH__ in domestic 
 ## **Imputation missing values**
 <p style="text-align: justify;">
 
-The imputation process was used according to Van Buuren criteria. 6 values for ADC and 11 for consistency. KNN was used for deterministic process and multiple imputation by chained equations (MICE) with  
-linear regression for stochastic methods. More information in `imputation` folder. 
+The imputation process was used according to Van Buuren criteria. 6 values for ADC and 11 for consistency. KNN was used for deterministic process and multiple imputation by chained equations (MICE) with linear regression for stochastic methods. More information in `imputation` folder. 
 
 </p>
 
@@ -54,7 +53,7 @@ We apply pipeline from scikit-learn of the pre-processed dataset for each algori
 ## **Metrics and bootstrap implementation**
 <p style="text-align: justify;">
 
-We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC), (2) Average Precision-Recall (AP) Area Under Curve (AUC), (3) Sensitivity (or recall), (4) Specificity, (5) F1 score and (6) Matthew Correlation Coefficient (MCC). The formulas and bootsrap techniques are described in `metrics_boot` folder. Bootstrap was used to find interval confidence (IC) with 95% confidence (n= 1000) after find best threshold. 
+We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC), (2) Average Precision-Recall (AP) Area Under Curve (AUC), (3) Sensitivity (or recall), (4) Specificity, (5) F1 score and (6) Matthew Correlation Coefficient (MCC). The formulas and bootsrap techniques are described in `metrics` folder. Bootstrap was used to find interval confidence (IC) with 95% confidence (n= 1000) after find best threshold. 
 
 </p>
 
