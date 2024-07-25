@@ -57,7 +57,7 @@ We used the following metrics considering the nature of the problem and its unba
 
 </p>
 
-## **Repository cloning and application of the model to domestic dataset**
+## **Clone repository and application for domestic dataset**
 <div align="center"> 
   
   ### **UNDER CONSTRUCTION**
@@ -78,26 +78,29 @@ We used the following metrics considering the nature of the problem and its unba
 
 </br>
 
-## **Institutional** 
+<hr style="width: 50%;">
+
+### **Institutional** 
 </br>
 <div style="float: left;">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 250px;">
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 300px;">
 </div>
 
 *School of Medical Sciences State University of Campinas - FCM/UNICAMP*
 
-<hr style="width: 50%;">
 </br>
 <div style="float: left;">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/78c66f70-c8c5-46b8-8f85-d5aaff665d01" alt="logo_hc_unicamp" style="width: 250px;">
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/78c66f70-c8c5-46b8-8f85-d5aaff665d01" alt="logo_hc_unicamp" style="width: 300px;">
 </div>
 
 *Unicamp Clinical Hospital - HC/UNICAMP*
 
-## **Institutional Partnership**
+<hr style="width: 50%;">
+
+### **Institutional Partnership**
 </br>
 <div style="float: left;">
-  <img src="https://github.com/user-attachments/assets/27f3c1a0-49bc-4edb-81da-1a984a0a76fd" alt="ITA_logo_2" style="width: 250px;">
+  <img src="https://github.com/user-attachments/assets/27f3c1a0-49bc-4edb-81da-1a984a0a76fd" alt="ITA_logo_2" style="width: 300px;">
 </div>
 
 *Aeronautics Institute of Technology - ITA*
