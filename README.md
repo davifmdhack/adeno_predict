@@ -38,14 +38,14 @@ the available file `dataset_example.csv` with single acess __PATH__ in domestic 
 ## **Imputation missing values**
 <p style="text-align: justify;">
 
-The imputation process was used according to Van Buuren criteria. 6 values for ADC and 11 for consistency. KNN was used for deterministic process and multiple imputation by chained equations (MICE) with linear regression for stochastic methods. More information in `imputation` folder. 
+The imputation process was used according to Van Buuren criteria, six values for *ADC* and eleven for *consistency*. KNN was used for deterministic process and multiple imputation by chained equations (MICE) with linear regression for stochastic methods. More information in `imputation` folder. 
 
 </p>
 
 ## **Workflow algorithms**
 <p style="text-align: justify;">
 
-We apply pipeline from scikit-learn of the pre-processed dataset for each algorithm, considering particularities such as standardization of numerical variables. A cross-validation method using Leave-One-Out (`leave_one_out.md`) with
+We applied a pipeline from scikit-learn of the pre-processed dataset for each algorithm, considering particularities such as standardization of numerical variables. A cross-validation method using Leave-One-Out (`leave_one_out.md`) with
 10 folds for cross-validation process until finding the `best_model` for each algorithm considering the parameters (`algorithms_parameters.md`).
 
 </p>
