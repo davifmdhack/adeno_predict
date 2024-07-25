@@ -52,7 +52,7 @@ $$
 
 The bootstrap method is a powerful statistical tool used to estimate the distribution of a statistic. Bootstrap method can be particularly useful for estimating the confidence intervals of a model's 
 performance metric without needing to make any assumptions about the distribution of the underlying data.
-Considering $D$ original dataset containing $N$ data points, i.e, $D = d_1, d_2, ..., d_{N}$, generating $B$ bootstrap samples $(B^\*_1, B^\*_2, ..., B^\*_n)$,  where each $B^\*_i$ is a set of $N$ data points drawn with replacement from $D$.For each $B^\*_i$, its performance metric $θ\^*_i$. Therefore, the confidence interval calculation is calculated from:  
+Considering $D$ original dataset containing $d$ data points, i.e, $D = d_1, d_2, ..., d_{N}$, generating $B$ bootstrap samples $(B^\*_1, B^\*_2, ..., B^\*_n)$,  where each $B^\*_i$ is a set of $N$ data points extracted by replacement from $D$. For each $B^\*_i$, its performance metric is $θ\^*_i$. TTherefore, the confidence interval is calculated from sort performance metrics in 1:
 
 1. Sort performance metrics in asceding order { $\theta^\*_1$, $\theta^\*_2$, ..., $\theta^\*_B$ }
 2. For a $(1- \alpha)\cdot 100 \%$ confidence, the confidence interval is given by:
