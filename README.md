@@ -17,13 +17,13 @@
 <p style="text-align: justify;">
 
 This repository (__Adeno Predict__) serves the purpose of applying machine learning algorithms to predict the consistency of pituitary macroadenomas from demographic data and brain MRI parameters. 
-The objective of this application is to optimize the ability to predict non-soft tumors and consequently improve surgical planning and ultimately reduce post-surgical complications.    
+The objective of this application is to optimize the ability to predict non-soft consistency and consequently improve surgical planning and ultimately reduce post-surgical complications.    
 
 Using a database of 70 patients from Hospital de Clínicas of the State University of Campinas (HC- UNICAMP). Our group opted for the following classification algorithms: Decision Tree (DT), K-nearst Neighbor (KNN), Support Vector Machine (SVM) and Ensemble of two best models (DT and SVM). 
 
 In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics` folder).  
 
-We are building the session to clone the repository and apply our trained model to local datasets. It will be available in the future at `clone_repository` folder. 
+We are building the session to clone the repository and apply our trained model to local datasets. It will be available soon in the future at `clone_repository` folder. 
 
 </p>
 
