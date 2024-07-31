@@ -20,32 +20,44 @@ $$
 
 
 $$
-(2) \ \ \ \ \  \text{Sensitivity} = \dfrac{TP}{(TP + FN)}
+(2) \ \ \ \ \  \text{AP} = \sum_{n=1}^N (R_n - R_{n-1})\cdot P_n
+$$
+
+Where $N$ is the number of thresholds at which precision and recall are evaluated. $P_n$ is the precision at the n-th threshold, $R_n$ is the recall at the n-th threshold and $R_{n-1}$ is the recall at the previous threshold. 
+
+<br>
+
+<br>
+
+
+$$
+(3) \ \ \ \ \  \text{Sensitivity} = \dfrac{TP}{(TP + FN)}
 $$
 
 <br>
 
 $$
-(3) \ \ \ \ \  \text{Specificity} = \dfrac{TN}{(TN + FP)}
+(4) \ \ \ \ \  \text{Specificity} = \dfrac{TN}{(TN + FP)}
 $$
 
 <br>
 
 $$
-(4) \ \ \ \ \  \text{F1 Score} = \dfrac{TP}{\left[TP + \dfrac{1}{2} \cdot (FP + FN)\right]}
+(5) \ \ \ \ \  \text{F1 Score} = \dfrac{TP}{\left[TP + \dfrac{1}{2} \cdot (FP + FN)\right]}
 $$
 
 <br>
 
 $$
-(5) \ \ \ \ \  \text{MCC Score} = \dfrac{(TP \cdot TN - FP \cdot FN)}{\sqrt{(TP + FP) \cdot (TP + FN) \cdot (TN + FP) \cdot (TN + FN)}}
+(6) \ \ \ \ \  \text{MCC Score} = \dfrac{(TP \cdot TN - FP \cdot FN)}{\sqrt{(TP + FP) \cdot (TP + FN) \cdot (TN + FP) \cdot (TN + FN)}}
 $$
 
 1 - Area Under Curve (AUC)  
-2 - Sensitivity (Recall)  
-3 - Specificity  
-4 - F1 Score  
-5 - Matthews correlation coefficient (MCC) Score
+2 - Average precision-recall (AP)  
+3 - Sensitivity (Recall)  
+4 - Specificity  
+5 - F1 Score  
+6 - Matthews correlation coefficient (MCC) Score
 <p style="text-align: justify;">
 
 ## **Bootstrap implementation**
