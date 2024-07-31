@@ -16,7 +16,7 @@
     best_seeds = []
     small_missing = float('inf')
 
-    for seed in range(10000):
+    for seed in range(1000):
         train, test = train_test_split(df, 
                                    test_size=0.3, 
                                    random_state=seed)
@@ -28,7 +28,7 @@
     elif missing_teste == small_missing:
         best_seeds.append(seed)
         
-    random.seed(42) 
+    random.seed(34) 
     melhor_seed_escolhida = best_seeds[0]
     chosen_seed = random.choice(best_seeds) # 5006 chosen seed
 
