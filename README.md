@@ -53,7 +53,7 @@ We applied a pipeline from scikit-learn of the pre-processed dataset for each al
 ## **Metrics and bootstrap implementation**
 <p style="text-align: justify;">
 
-We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC), (2) Sensitivity (or Recall), (3) Specificity, (4) F1 score and (5) Matthew Correlation Coefficient (MCC). The formulas and bootsrap techniques are described in `metrics` folder. Bootstrap was used to find interval confidence (IC) with 95% confidence (n= 1000) after find best threshold (`bootstrap_code.md`). 
+We used the following metrics considering the nature of the problem and its unbalanced data: (1) Area Under Curve (AUC) of Receiver Operating Curve (ROC) and average precision-recall (AP), (2) Sensitivity (or Recall), (3) Specificity, (4) F1 score and (5) Matthew Correlation Coefficient (MCC). The formulas and bootsrap techniques are described in `metrics` folder. Bootstrap was used to find interval confidence (IC) with 95% confidence (n= 1000) after find best threshold (`bootstrap_code.md`). 
 
 </p>
 
