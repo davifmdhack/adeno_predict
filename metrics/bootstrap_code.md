@@ -2,6 +2,7 @@
 
 ## **Libraries**
     import numpy as np
+    import pandas as pd
     from sklearn.metrics import (average_precision_score, confusion_matrix, f1_score, matthews_corrcoef, 
                                  precision_recall_curve, roc_auc_score, roc_curve, recall_score, precision_score)
     from sklearn.utils import resample
