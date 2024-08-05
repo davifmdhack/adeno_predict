@@ -56,4 +56,3 @@
     print(test['consistency'].value_counts())
     df_set_final = pd.concat([train, test], axis = 0)
     df_set_final.to_excel('df_set_final.xlsx', sheet_name = 'Data Frame Imputation', index = False)
-  
