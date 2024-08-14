@@ -39,7 +39,7 @@ from tkinter import messagebox
 ### Requirements analysis:
 #### Columns needed:
 def verify_columns(df, col_needed):
-    colunas_diff = [col for col in colunas_necessarias if col not in df.columns]
+    colunas_diff = [col for col in col_needed if col not in df.columns]
     if colunas_diff:
         mensagem = f"Divergent columns found: {', '.join(colunas_diff)}"
         messagebox.showwarning("Divergent Columns", mensagem)
@@ -47,7 +47,7 @@ def verify_columns(df, col_needed):
     return True
 
 #### Type of columns and values:
-  def verificar_valores(df):
+def verify_values(df):
     erros = []
     
     # Numerical variables verify:
@@ -90,12 +90,12 @@ def verificar_missing_values(df):
 
 ### Dataset upload:
 col_needed = ['age', 'adc', 'diameter', 'sex', 'consistency']
-df = pd.read_excel('df_dataframe.xlsx')
+df = pd.read_excel('df_set_final.xlsx')
 
 # Defining the features:
-if verificar_colunas(df, colunas_necessarias):
-    if verificar_valores(df):
-        verificar_dados_ausentes(df)
+if verify_columns(df, col_needed):
+    if verify_values(df):
+        verificar_missing_values(df)
         
         # Definindo as variáveis X e y
         X = df.drop(columns='consistency', axis=1)
