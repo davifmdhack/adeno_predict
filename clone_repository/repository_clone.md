@@ -17,7 +17,7 @@ D. Paste the URL's repository: `https://github.com/davifmdhack/adeno_predict.git
 </div>
 </br>
 
-E. Choose your diretory where you want to install the repository and click on: **Select Repository Location**. 
+E. Choose your diretory where you want to install the repository and click on: **Select Repository Location**.  
 F. After the clone, the VSCode will ask if you want to open your recently created respository. Select: **Open**.
 
 </br>
