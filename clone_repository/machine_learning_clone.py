@@ -32,6 +32,75 @@ from sklearn.metrics import classification_report
 from sklearn.decomposition import PCA
 from matplotlib.lines import Line2D
 import warnings
+import tkinter as tk
+from tkinter import messagebox
+
+## **Requirements analysis and dataset upload**  
+### Requirements analysis:
+#### Columns needed:
+def verify_columns(df, col_needed):
+    colunas_diff = [col for col in colunas_necessarias if col not in df.columns]
+    if colunas_diff:
+        mensagem = f"Divergent columns found: {', '.join(colunas_diff)}"
+        messagebox.showwarning("Divergent Columns", mensagem)
+        return False
+    return True
+
+#### Type of columns and values:
+  def verificar_valores(df):
+    erros = []
+    
+    # Numerical variables verify:
+    if not pd.api.types.is_numeric_dtype(df['age']):
+        erros.append("The 'age' column is not just numbers")
+    if not pd.api.types.is_numeric_dtype(df['adc']):
+        erros.append("The 'adc' column is not just numbers")
+    if not pd.api.types.is_numeric_dtype(df['diameter']):
+        erros.append("The 'diameter' column is not just numbers")
+    
+    # 'sex' column:
+    if not set(df['sex']).issubset({'M', 'F'}):
+        erros.append("Column 'sex' contains values ​​other than 'M' and 'F'")
+    
+    # 'consistency' column:
+    if not set(df['consistency']).issubset({'soft', 'não soft'}):
+        erros.append("Column 'consistency' contains values ​​other than 'soft' and 'non-soft'")
+    
+    if erros:
+        mensagem = "\n".join(erros)
+        messagebox.showwarning("Divergence in values", mensagem)
+        return False
+    return True
+
+#### Function to check for missing data and ask user about imputation:
+def verificar_missing_values(df):
+    missing_values= df.isnull().sum()
+    col_with_missing = missing_values[missing_values > 0]
+    
+    if not col_with_missing.empty:
+        resp = messagebox.askyesno("There is missing data in your data", f"The following columns have missing data:n{col_with_missing}\n\nDo you want to impute missing values?")
+        if resp:
+            df.fillna(df.median(numeric_only=True), inplace=True)
+            df.fillna(method='ffill', inplace=True)
+            messagebox.showinfo("Imputation Performed", "Missing values ​​were imputed")
+        else:
+            messagebox.showinfo("Imputation Cancelled", "Imputation of missing values ​​has been canceled")
+    else:
+        messagebox.showinfo("No missing data", "No missing data found.")
+
+### Dataset upload:
+col_needed = ['age', 'adc', 'diameter', 'sex', 'consistency']
+df = pd.read_excel('df_dataframe.xlsx')
+
+# Defining the features:
+if verificar_colunas(df, colunas_necessarias):
+    if verificar_valores(df):
+        verificar_dados_ausentes(df)
+        
+        # Definindo as variáveis X e y
+        X = df.drop(columns='consistency', axis=1)
+        y = df['consistency']
+        messagebox.showinfo("Process Completed", "The dataset was successfully verified and the X and y variables were defined")
 
 ## **Functions defined**  
 
@@ -99,12 +168,6 @@ def bootstrap_metrics(all_y, all_probs, all_preds, n_iterations=1000, alpha=0.95
         ]
     })
     return model_metrics__with_ci
-
-## **Dataset upload**  
-
-df = pd.read_excel('df_dataframe.xlsx')
-X = df.drop(columns='consistency', axis = 1)
-y = df['consistency']
 
 ## **Model hyperparameterization and testing | Using Leave One Out**  
 #### ++ **SVM model  
