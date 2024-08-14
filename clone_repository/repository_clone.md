@@ -7,16 +7,16 @@ C. [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 ## 2. Cloning repository into VSCode:
 
 A. Open the **VSCode**  
-B. Click on **View** in superior menu and select **Command Palette**.  
-C. Into search bar, write `Git: Clone` and select the option `Git: Clone`.  
+B. Click on **View** in superior menu and select **Command Palette** or ``Ctrl + Shift + P``.  
+C. Into search bar, write `Git: Clone` and select the option `Clone from GitHub`.  
 D. Paste the URL's repository: `https://github.com/davifmdhack/adeno_predict.git`.  
 E. Choose your diretory where you want to install the repository and click on **Select Repository Location**.  
 F. After the clone, the VSCode will ask if you want to open your recently created respository. Select **Open**.
 
-
 ## 3. Enviroment configuration:  
 
-A. **Open the terminal** inside VSCode pressing ``Crt +`` or go to **Terminal** > **New Terminal**.  
+A. In the sidebar, click on ``clone_repository.ipynb`` and select the file. 
+B. 
 B. Create a virtual environment:  
 ```
 bash
