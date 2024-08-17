@@ -58,15 +58,13 @@ We used the following metrics considering the nature of the problem and its unba
 </p>
 
 ## **Clone repository and application for domestic dataset**
-<div align="center"> 
+<p style="text-align: justify;">
   
-  ### **UNDER CONSTRUCTION**
-  
-</div>
+We have developed a step-by-step guide, available in `clone_repository`, so that researchers can apply our trained model if they have the necessary information.
 
-<div align="center">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/e6d5f07a-c321-4c16-bd76-78817fc2b13b" alt="Under Construction" style="width: 200px;">
-</div>
+At the moment, this application is limited to databases that have all the required values. In the future, we will implement a method for imputing missing data.
+
+</p>
 
 ## **References**
 1. van Buuren S. Flexible Imputation of Missing Data, Second Edition. Second edition. | Boca Raton, Florida : CRC Press, [2019] |: Chapman and Hall/CRC; 2018. doi: 10.1201/9780429492259.
