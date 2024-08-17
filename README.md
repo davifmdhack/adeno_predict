@@ -23,8 +23,6 @@ Using a database of 70 patients from Hospital de Clínicas of the State Universi
 
 In this repository, we divided the codes according to the following steps: example of `dataset` folder (`dataset__example.csv`), imputation of missing values (`imputation` folder), tunning flow using Leave-One-Out strategy (`workflow_algorithms` folder), metrics and bootstrap (`metrics` folder).  
 
-We are building the session to clone the repository and apply our trained model to local datasets. It will be available soon in the future at `clone_repository` > `repository_clone.md` file. 
-
 </p>
 
 ## **Dataset format**
@@ -60,7 +58,7 @@ We used the following metrics considering the nature of the problem and its unba
 ## **Clone repository and application for domestic dataset**
 <p style="text-align: justify;">
   
-We have developed a step-by-step guide, available in `clone_repository`, so that researchers can apply our trained model if they have the necessary information.
+We have developed a step-by-step guide, available in `clone_repository` > `repository_clone.md`, so that researchers can apply our trained model if they have the necessary information.
 
 At the moment, this application is limited to databases that have all the required values. In the future, we will implement a method for imputing missing data.
 
