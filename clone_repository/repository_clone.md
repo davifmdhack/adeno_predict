@@ -47,8 +47,8 @@ B. The dataset must match the format of the example available for reference in t
 
 ## 5. Running the `model_apply.py` File:
 
-A. This file will use our trained model `best_model_svm.pkl` to predict tumor consistency from your dataset.
-B. After executing the file, a report named `report_metrics_and_plot.pdf`  will be automatically generated locally, displaying results similar to the example below.
+A. This file will use our trained model `best_model_svm.pkl` to predict tumor consistency from your dataset.  
+B. Using the dataset `df_example.xlsx`, present in this folder, renaming it to `df_pituitary.xlsx` the report below was automatically generated with the name `report_metrics_and_plot.pdf`
 
 </br>
 <div style="text-align: center;">
