@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec9ac98-0aee-488e-bfbe-b18b8f6d2053" alt="logos" style="width: 350px; border-radius: 30px;"/>
+  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec9ac98-0aee-488e-bfbe-b18b8f6d2053" alt="logos" style="width: 300px; border-radius: 20px;"/>
 </div>
 
 <div align = "center";> 
@@ -8,6 +8,7 @@
 
 #### *Davi Ferreira MD., MSc.* 
 [![Send e-mail to Davi Ferreira](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:davi.ferreira.soares@gmail.com)
+
 #### *Fernanda Veloso MD., PhD. candidate* 
 [![Send e-mail to Fernanda](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:fernandavelosop@gmail.com)
 
@@ -74,28 +75,29 @@ At the moment, this application is limited to databases that have all the requir
 
 </br>
 
-<hr style="width: 50%;">
+<hr style="width: 100%;">
 
 ### **Institutional** 
 </br>
-<div style="float: left;">
+<div style="float: center;">
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 300px;">
 </div>
 
 *School of Medical Sciences State University of Campinas - FCM/UNICAMP*
 
+
 </br>
-<div style="float: left;">
+<div style="float: center;">
   <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/78c66f70-c8c5-46b8-8f85-d5aaff665d01" alt="logo_hc_unicamp" style="width: 300px;">
 </div>
 
 *Unicamp Clinical Hospital - HC/UNICAMP*
 
-<hr style="width: 50%;">
+<hr style="width: 100%;">
 
 ### **Institutional Partnership**
 </br>
-<div style="float: left;">
+<div style="float: center;">
   <img src="https://github.com/user-attachments/assets/27f3c1a0-49bc-4edb-81da-1a984a0a76fd" alt="ITA_logo_2" style="width: 300px;">
 </div>
 
