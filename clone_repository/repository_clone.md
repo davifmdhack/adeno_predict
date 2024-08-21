@@ -1,8 +1,12 @@
 ## 1. Prerequisites:
 
-A. [Git for Windows](https://git-scm.com/download/win)  
-B. [Python](https://www.python.org/downloads/)  
-C. [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
+</br>
+<div style="text-align: left;">
+
+A. [**Git for Windows**](https://git-scm.com/download/win)  
+B. [**Python**](https://www.python.org/downloads/)  
+C. [**Visual Studio Code (VSCode)**](https://code.visualstudio.com/)
+</div>
 
 ## 2. Cloning the Repository in VSCode:
 
@@ -12,8 +16,8 @@ C. In the search bar, type `Git: Clone` and select the option `Clone from GitHub
 D. Paste the URL's repository: `https://github.com/davifmdhack/adeno_predict.git`.  
 
 </br>
-<div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/f5840307-7b9d-4230-93be-822aa515754c" alt="Cloning the Adeno Predict GitHub repository" style="width: 200%; max-width: 600px;"/>
+<div style="text-align: left;">
+  <img src="https://github.com/user-attachments/assets/f5840307-7b9d-4230-93be-822aa515754c" alt="Cloning the Adeno Predict GitHub repository" style="width: 100%; max-width: 700px;"/>
 </div>
 </br>
 
@@ -21,8 +25,8 @@ E. Choose the directory where you want to install the repository and click **Sel
 F. After cloning, VSCode will prompt you to open your newly created repository. Select **Open**.
 
 </br>
-<div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/a310fd43-418f-4615-b167-8b84986567a6" alt="Opening the cloned repository in VSCode" style="width: 100%; max-width: 150px;"/>
+<div style="text-align: left;">
+  <img src="https://github.com/user-attachments/assets/a310fd43-418f-4615-b167-8b84986567a6" alt="Opening the cloned repository in VSCode" style="width: 100%; max-width: 700px;"/>
 </div>
 </br>
 
@@ -31,8 +35,8 @@ F. After cloning, VSCode will prompt you to open your newly created repository. 
 A. Transfer the dataset named `df_pituitary.xlsx` into the `clone_repository` folder as shown in the figure below.
 
 </br>
-<div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/f76ec799-d42a-4053-a2c3-c37c3ce33c72" alt="Importing the dataset into the repository" style="width: 100%; max-width: 150px;"/>
+<div style="text-align: left;">
+  <img src="https://github.com/user-attachments/assets/f76ec799-d42a-4053-a2c3-c37c3ce33c72" alt="Importing the dataset into the repository" style="width: 100%; max-width: 700px;"/>
 </div>
 </br>
 
@@ -51,8 +55,8 @@ A. This file will use our trained model `best_model_svm.pkl` to predict tumor co
 B. Using the dataset `df_example.xlsx`, present in this folder, renaming it to `df_pituitary.xlsx` the report below was automatically generated with the name `report_metrics_and_plot.pdf`
 
 </br>
-<div style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/e3f92f4a-ecd9-4cc7-b712-30fb95d9a9fb" alt="Example of the generated report" style="width: 100%; max-width: 150px;"/>
+<div style="text-align: left;">
+  <img src="https://github.com/user-attachments/assets/e3f92f4a-ecd9-4cc7-b712-30fb95d9a9fb" alt="Example of the generated report" style="width: 100%; max-width: 700px;"/>
 </div>
 </br>
 
