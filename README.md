@@ -102,4 +102,5 @@ At the moment, this application is limited to databases that have all the requir
 
 *Aeronautics Institute of Technology - ITA*
 
-© 2024 Davi Ferreira. All rights reserved.
+**Custom License**  
+**_Copyright (c) 2024 Davi Ferreira_**
