@@ -1,1 +1,1 @@
-**© 2024 Davi Ferreira. All rights reserved**
+**© 2024 Davi Ferreira. All rights reserved.**
