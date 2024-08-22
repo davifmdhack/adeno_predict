@@ -80,11 +80,10 @@ At the moment, this application is limited to databases that have all the requir
 ### **Institutional** 
 </br>
 <div style="float: center;">
-  <img src="https://github.com/davifmdhack/adeno_predict/assets/109975635/dec66e61-fab1-4091-8655-8c6e0f7b0d17" alt="fcm_unicamp_logo" style="width: 300px;">
+  <img src="https://github.com/user-attachments/assets/79aa7ffb-57bf-4d41-becc-1495559f95aa" alt="FCM_Unicamp_logo" style="width: 300px;">
 </div>
 
 *School of Medical Sciences State University of Campinas - FCM/UNICAMP*
-
 
 </br>
 <div style="float: center;">
@@ -98,7 +97,7 @@ At the moment, this application is limited to databases that have all the requir
 ### **Institutional Partnership**
 </br>
 <div style="float: center;">
-  <img src="https://github.com/user-attachments/assets/27f3c1a0-49bc-4edb-81da-1a984a0a76fd" alt="ITA_logo_2" style="width: 300px;">
+  <img src="https://github.com/user-attachments/assets/27f3c1a0-49bc-4edb-81da-1a984a0a76fd" alt="ITA_logo" style="width: 300px;">
 </div>
 
 *Aeronautics Institute of Technology - ITA*
