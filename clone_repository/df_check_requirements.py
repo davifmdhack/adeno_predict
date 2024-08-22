@@ -1,5 +1,15 @@
-pip install -r requirements.txt -q --no-warn-script-location --no-warn-conflicts
-pip install tkinter pandas scikit-learn joblib matplotlib
+import subprocess
+import sys
+
+def check_and_install(package):
+    try:
+        __import__(package)
+    except ImportError:
+        print(f"{package} não está instalado. Instalando agora...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+check_and_install('tkinter')
+check_and_install('pandas')
 
 import tkinter as tk
 from tkinter import messagebox
