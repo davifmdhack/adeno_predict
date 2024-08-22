@@ -66,5 +66,4 @@ D. The report below was automatically generated with the name `report_metrics_an
 
 *  Feel free to submit improvements and suggestions via Pull Requests.
 *  For any issues or questions, please open an Issue on GitHub.
-*  For any issues or questions, open an Issue on GitHub.
 
