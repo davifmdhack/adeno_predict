@@ -1,3 +1,18 @@
+import subprocess
+import sys
+
+def check_and_install(package):
+    try:
+        __import__(package)
+    except ImportError:
+        print(f"{package} não está instalado. Instalando agora...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+check_and_install('pandas')
+check_and_install('sklearn')
+check_and_install('joblib')
+check_and_install('matplotlib')
+
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics import (auc, confusion_matrix, f1_score, matthews_corrcoef, 
