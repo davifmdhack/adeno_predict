@@ -4,5 +4,3 @@ __all__ = [
 ]
 
 from .inference import load_model, predict_dataframe
-
-

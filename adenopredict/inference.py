@@ -44,14 +44,14 @@ def _prepare_features(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series | None]
     """
     df_local = df.copy()
 
-    # Mapear consistência se existir
+    # Map target labels to integers if present
     y = None
     if TARGET_COLUMN in df_local.columns:
         replace_map_outcome = {"soft": 0, "non-soft": 1}
         df_local[TARGET_COLUMN] = df_local[TARGET_COLUMN].map(replace_map_outcome).fillna(df_local[TARGET_COLUMN])
         y = df_local[TARGET_COLUMN]
 
-    # One-hot para sexo (drop first para gerar sex_M compatível)
+    # One-hot encode 'sex' (drop first) to produce 'sex_M'
     encoder = OneHotEncoder(drop="first")
     encoded = encoder.fit_transform(df_local[["sex"]]).toarray()
     encoded_sex = pd.DataFrame(
@@ -62,11 +62,11 @@ def _prepare_features(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.Series | None]
 
     df_encoded = pd.concat([df_local.drop(["sex"], axis=1), encoded_sex], axis=1)
 
-    # Ordem das features usada no código original
+    # Feature order expected by the trained model
     x_columns = ["age", "sex_M", "diameter", "adc"]
     for col in x_columns:
         if col not in df_encoded.columns:
-            # Garantir coluna se por acaso nomes vindo do encoder forem diferentes
+            # Ensure column exists if encoder produced a different name
             df_encoded[col] = 0
 
     X = df_encoded[x_columns]
