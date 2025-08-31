@@ -1,6 +1,8 @@
-# **Dataset format**
+# Dataset format
 
-## **Features used**
+---
+
+## Features used
 
 1. `ID`: Intern identification of patient $\rightarrow$ **sensitive variable excluded**
 
@@ -14,13 +16,13 @@
 
 6. `consistency` $\rightarrow$ **target feature**: soft (class = 0) or non-soft (class = 1) consistency
 
-## **Features unused\***
+## Features unused\*
 
 1. `pathology`: Divided into basophilic, chromophobe, chromophobe/eosinophilic, corticotroph, and eosinophilic
 
 2. `ki67`: Use of the interval variable: < 1%, 1 - 3%, 3 - 5%, > 5%
 
-### **Data set Example**
+### Data set Example
 
 An example of the dataset is available in the `dataset_example.csv` file  
 
