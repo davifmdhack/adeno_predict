@@ -1,13 +1,18 @@
-## **Imputation process**
+# **Imputation process**
 
 ## **Libraries**
+
+```python
     import numpy as np
     import pandas as pd
     from sklearn.metrics import (average_precision_score, confusion_matrix, f1_score, matthews_corrcoef, 
                                  precision_recall_curve, roc_auc_score, roc_curve, recall_score, precision_score)
     from sklearn.utils import resample
+```
 
 ## **Previously defined variables**
+
+```python
  `specificity_sensitivity` = function to determine specificity
  
     def specificity_sensitivity(conf_matrix):
@@ -63,3 +68,4 @@
             ]
         })
         return model_metrics__with_ci
+```
