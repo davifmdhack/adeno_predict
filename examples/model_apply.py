@@ -5,7 +5,7 @@ def check_and_install(package):
     try:
         __import__(package)
     except ImportError:
-        print(f"{package} não está instalado. Instalando agora...")
+        print(f"Installing missing dependency: {package}...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 check_and_install('pandas')
@@ -16,13 +16,14 @@ check_and_install('matplotlib')
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics import (auc, confusion_matrix, f1_score, matthews_corrcoef, 
-                             precision_recall_curve, recall_score, roc_curve,average_precision_score,
+                             precision_recall_curve, recall_score, roc_curve, average_precision_score,
                              ConfusionMatrixDisplay)
 import joblib
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 
-df = pd.read_excel('df_pituitary.xlsx')
+# Input CSV only (standardized)
+df = pd.read_csv('df_pituitary.csv')
 replace_map_outcome = {
     'soft': 0,
     'non-soft': 1
@@ -82,13 +83,12 @@ metrics_df = pd.DataFrame(metrics_data)
 fig = plt.figure(figsize=(15, 15))
 
 # Intro
-fig.suptitle('REPORT - Adeno Predict model in domestic dataset', fontsize=16, fontweight='bold', y=0.98)
-plt.figtext(0.5, 0.89, 'Created by: \n\nDavi Ferreira, MD., MSc. E-Mail: davi.ferreira.soares@gmail.com\nFernanda Veloso MD., PhD. candidate. E-Mail: fernandavelosop@gmail.com', fontsize=12, ha='center')
-
+fig.suptitle('REPORT - AdenoPredict model on local dataset (CSV)', fontsize=16, fontweight='bold', y=0.98)
+plt.figtext(0.5, 0.89, 'Created by: Davi Ferreira, MD., MSc.', fontsize=12, ha='center')
 # Title 1
 ax_title_table = fig.add_subplot(4, 1, 1)
 ax_title_table.axis('off')
-ax_title_table.text(0.5, 0.8, 'Table: Metrics Resume', fontsize=14, ha='center', fontweight='bold')
+ax_title_table.text(0.5, 0.8, 'Table: Metrics Summary', fontsize=14, ha='center', fontweight='bold')
 
 # Table 1
 ax_table = fig.add_subplot(4, 1, 1)

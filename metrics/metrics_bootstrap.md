@@ -1,12 +1,15 @@
+# **Statistical Methods**
+
 ## **Confusion matrix**
-<div align="center">
+
+<center>
 
 |                      | **Predicted Positive** | **Predicted Negative** |
 |:--------------------:|:----------------------:|:----------------------:|
 | **Actual Positive**  | True Positive (TP)     | False Negative (FN)    |
 | **Actual Negative**  | False Positive (FP)    | True Negative (TN)     |
 
-</div>
+</center>
 
 </br>
 
@@ -71,4 +74,4 @@ Considering $D$ original dataset containing $d$ data points, i.e, $D = d_1, d_2,
 
 $$
 \left[\theta^\*_{\left(\frac{\alpha}{2}\right)}\,  \theta^\*\_{\left(1 - \frac{\alpha}{2}\right)}\right]
-$$ 
+$$
