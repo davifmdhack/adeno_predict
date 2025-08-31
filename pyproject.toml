@@ -1,0 +1,23 @@
+[project]
+name = "adenopredict"
+version = "0.1.0"
+description = "Predict pituitary macroadenoma consistency using ML and a Streamlit UI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.49.1",
+    "pandas>=2.2.2",
+    "scikit-learn==1.4.2",
+    "joblib>=1.4.2",
+    "matplotlib>=3.10.6",
+    "openpyxl>=3.1.5",
+    "rich>=14.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adenopredict*"]
