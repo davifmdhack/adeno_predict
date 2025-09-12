@@ -63,6 +63,19 @@ We used the following metrics considering the nature of the problem and its clas
 
 </p>
 
+## 🗞️✨ Online Web Application
+
+You can use **Adeno Predict** directly in your browser, without installing anything, through our official web page:
+
+👉 [https://adenopredict-machine-learning.streamlit.app/](https://adenopredict-machine-learning.streamlit.app/)
+
+**Features:**
+
+- **📂 Dataset Prediction:** Upload a CSV file with the required columns (`age`, `sex`, `diameter`, `adc`, and optionally `consistency`) to get predictions for all patients in your dataset. Download the results and view performance metrics if ground truth is provided.
+- **🙋🏻‍♀️ Individual Patient Analysis:** Manually enter the data for a single patient and instantly receive the probability and predicted tumor consistency.
+
+This online platform provides the same experience as the local app, allowing you to use Adeno Predict from any device with internet access.
+
 ## Clone repository and application for domestic dataset
 
 <p style="text-align: justify;">
@@ -134,29 +147,6 @@ streamlit run streamlit_app.py
 ```
 
 1. Upload your CSV with columns `age, sex, diameter, adc` (optional `consistency`). The app will generate probabilities and predictions. Results are saved to `results/df_prediction-results.csv`.
-
-### One-click (Windows)
-
-If you prefer, you can use the provided launcher to install and run everything automatically:
-
-1. Double-click `run_windows.bat`
-
-2. The script will:
-   - Create a virtual environment `.venv`
-
-   - Install project dependencies with `pip install -e .`
-  
-   - Start the app via Streamlit
-
-3. After installation, subsequent runs will be faster. You can always launch via the same `run_windows.bat`.
-
-#### Troubleshooting on Windows
-
-- If PowerShell blocks scripts, run: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` and re-activate the venv.
-
-- If Streamlit fails to open a browser, copy the printed local URL and paste it in your browser.
-
-- If you use WSL, run the same commands in your Linux shell. Ensure images are accessible via relative paths.
 
 ---
 
