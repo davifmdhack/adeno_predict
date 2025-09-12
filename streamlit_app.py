@@ -1,6 +1,11 @@
 import streamlit as st
-from app import render_header, render_created_by_box, render_footer, hide_header
-from app.pages import render_onboarding_tab, render_run_model_tab
+
+from app import hide_header, render_created_by_box, render_footer, render_header
+from app.pages import (
+    render_individual_patient_tab,
+    render_onboarding_tab,
+    render_run_model_tab,
+)
 
 # Set page config
 st.set_page_config(
@@ -16,13 +21,17 @@ hide_header()
 render_header()
 
 # Create tabs
-tab_onboarding, tab_predict = st.tabs(["📘 Onboarding", "⚙️ Run model"]) 
+tab_onboarding, tab_predict, tab_individual = st.tabs(
+    ["📘 Onboarding", "⚙️Run Model in Dataset", "🙋🏻‍♀️ Individual Patient Analysis"]
+)
 
-# Render onboarding and predict tabs
+# Render onboarding, predict, and individual analysis tabs
 with tab_onboarding:
     render_onboarding_tab()
 with tab_predict:
     render_run_model_tab()
+with tab_individual:
+    render_individual_patient_tab()
 
 # Render final box and footer
 render_created_by_box()
