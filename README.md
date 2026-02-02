@@ -157,7 +157,15 @@ streamlit run streamlit_app.py
 
 ---
 
-### References
+### How to cite us
+
+If you want to use the **Adeno Predict model** or **Adeno Predict app** in your study, do not forget to cite us:
+
+> Pereira, F.V., Ferreira, D., Garmes, H. et al. Machine Learning Prediction of Pituitary Macroadenoma Consistency: Utilizing Demographic Data and Brain MRI Parameters. *J Digit Imaging. Inform. med.* 38, 3484–3497 (2025). https://doi.org/10.1007/s10278-025-01417-6
+
+---
+
+### References (GitHub)
 
 1. van Buuren S. Flexible Imputation of Missing Data, Second Edition. Second edition. | Boca Raton, Florida : CRC Press, [2019] |: Chapman and Hall/CRC; 2018. doi: 10.1201/9780429492259.
 
