@@ -1,5 +1,6 @@
 import base64
 
+
 def image_to_data_uri(path: str) -> str:
     try:
         with open(path, "rb") as f:

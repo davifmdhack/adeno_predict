@@ -1,4 +1,5 @@
 import streamlit as st
+
 from .utils import image_to_data_uri
 
 
@@ -64,5 +65,3 @@ def render_footer():
     </div>
     """
     st.markdown(footer_html, unsafe_allow_html=True)
-
-

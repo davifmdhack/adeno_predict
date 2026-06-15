@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def hide_header():
     st.markdown(
         """
@@ -11,4 +12,4 @@ def hide_header():
         </style>
         """,
         unsafe_allow_html=True,
-)
+    )

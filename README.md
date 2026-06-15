@@ -148,6 +148,30 @@ streamlit run streamlit_app.py
 
 1. Upload your CSV with columns `age, sex, diameter, adc` (optional `consistency`). The app will generate probabilities and predictions. Results are saved to `results/df_prediction-results.csv`.
 
+## Project structure
+
+The inference library (`adenopredict/`) is organized around small, single-responsibility modules:
+
+- `constants.py` — single source of truth for the schema, label maps and decision threshold.
+- `preprocessing.py` — deterministic feature preparation (validation + `sex` encoding + target mapping).
+- `estimators.py` — substitutable `ProbabilityEstimator` strategies (`predict_proba` / `decision_function` / `predict`) following the Liskov Substitution Principle.
+- `inference.py` — public API (`load_model`, `predict_dataframe`) orchestrating the modules above.
+
+The Streamlit UI lives in `app/`, with a Streamlit-agnostic prediction service in `app/service.py`. A standalone reporting CLI is available at `examples/model_apply.py` (`python examples/model_apply.py --help`).
+
+## Development
+
+Install the project with development dependencies and run the quality gate (the same checks run in CI):
+
+```bash
+pip install -e ".[dev]"
+ruff check .
+ruff format --check .
+pytest -q
+```
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the history of notable changes.
+
 ---
 
 ### Article
