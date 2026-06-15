@@ -1,6 +1,6 @@
 [project]
 name = "adenopredict"
-version = "0.1.0"
+version = "0.2.0"
 description = "Predict pituitary macroadenoma consistency using ML and a Streamlit UI"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -14,6 +14,12 @@ dependencies = [
     "rich>=14.1.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
 [build-system]
 requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
@@ -21,3 +27,17 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["adenopredict*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+# E501 (line length) is handled by `ruff format`; long HTML/markdown UI strings
+# are intentionally kept on single lines.
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
