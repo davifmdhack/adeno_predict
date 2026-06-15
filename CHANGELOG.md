@@ -4,7 +4,7 @@ All notable changes to this project are documented in this file. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this
 project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-06-15
+## [2.1.0] - 2026-06-15
 
 Full structural refactor applying the Liskov Substitution Principle and general
 script best-practices, while preserving the public API
@@ -48,8 +48,14 @@ script best-practices, while preserving the public API
   instead of re-implementing preprocessing, and no longer auto-installs packages.
 - `app/config.py` and `app/data.py` reuse the shared constants and `pathlib`.
 
-## [0.1.0]
+## [2.0.0] - 2025-08-31
+
+- App modularization and organization improvements.
+
+## [1.0.0] - 2024-04-04
 
 - Initial release: SVM-based inference library and Streamlit application.
 
-[0.2.0]: https://github.com/davifmdhack/adeno_predict/releases/tag/v0.2.0
+[2.1.0]: https://github.com/davifmdhack/adeno_predict/compare/v.2.0.0...v.2.1.0
+[2.0.0]: https://github.com/davifmdhack/adeno_predict/releases/tag/v.2.0.0
+[1.0.0]: https://github.com/davifmdhack/adeno_predict/releases/tag/v.1.0.0

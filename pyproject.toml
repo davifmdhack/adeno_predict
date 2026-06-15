@@ -1,6 +1,6 @@
 [project]
 name = "adenopredict"
-version = "0.2.0"
+version = "2.1.0"
 description = "Predict pituitary macroadenoma consistency using ML and a Streamlit UI"
 readme = "README.md"
 requires-python = ">=3.11"
