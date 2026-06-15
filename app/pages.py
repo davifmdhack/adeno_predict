@@ -1,13 +1,35 @@
 import pandas as pd
 import streamlit as st
 
-from adenopredict.inference import predict_dataframe
-
 from .components import instructions_box, results_download_button, table_section
 from .config import DEFAULT_MODEL_PATH, EXAMPLE_CSV_PATH, RESULTS_PATH
 from .data import load_example_dataframe, save_results
 from .metrics import compute_and_show_metrics
 from .model import load_model_cached
+from .service import PredictionResult, run_prediction
+
+
+def _save_predictions(predictions: pd.DataFrame) -> None:
+    """Persist predictions to disk, surfacing failures instead of hiding them."""
+    try:
+        save_results(predictions, RESULTS_PATH)
+        st.info(f"Saved results to {RESULTS_PATH}")
+    except OSError as error:
+        st.warning(f"Could not save results to {RESULTS_PATH}: {error}")
+
+
+def _show_metrics_if_available(result: PredictionResult) -> None:
+    """Render evaluation metrics when the input carried a ground-truth column."""
+    if not result.has_ground_truth:
+        return
+    try:
+        compute_and_show_metrics(
+            result.ground_truth,
+            result.predictions["proba_non_soft"].to_numpy(),
+            result.predictions["predicted_label"].to_numpy(),
+        )
+    except (ValueError, TypeError) as error:
+        st.warning(f"Could not compute metrics: {error}")
 
 
 def render_onboarding_tab():
@@ -40,25 +62,13 @@ def render_onboarding_tab():
             table_section("#### 🗂️ Example dataset (first 10 rows)", example_df.head(10))
 
             model = load_model_cached(DEFAULT_MODEL_PATH)
-            example_out = predict_dataframe(model, example_df)
+            result = run_prediction(model, example_df)
 
-            save_results(example_out, RESULTS_PATH)
-            table_section("#### 📈 Adeno Predict - Results", example_out.head(10))
-            st.info(f"Saved results to {RESULTS_PATH}")
-
-            if "consistency" in example_df.columns:
-                gt_map = {"soft": 0, "non-soft": 1}
-                y_true = (
-                    example_df["consistency"]
-                    .map(gt_map)
-                    .fillna(example_df["consistency"])
-                    .astype(int)
-                )
-                y_prob = example_out["proba_non_soft"].values
-                y_pred = example_out["predicted_label"].values
-                compute_and_show_metrics(y_true, y_prob, y_pred)
-        except Exception as e:
-            st.info(f"Example preview not available: {e}")
+            _save_predictions(result.predictions)
+            table_section("#### 📈 Adeno Predict - Results", result.predictions.head(10))
+            _show_metrics_if_available(result)
+        except (FileNotFoundError, ValueError) as error:
+            st.info(f"Example preview not available: {error}")
 
 
 def render_run_model_tab():
@@ -67,59 +77,36 @@ def render_run_model_tab():
         return
 
     try:
-        import pandas as pd
-
         df = pd.read_csv(uploaded)
-    except Exception as e:
-        st.error(f"Failed to read CSV: {e}")
+    except (ValueError, pd.errors.ParserError) as error:
+        st.error(f"Failed to read CSV: {error}")
         st.stop()
 
     with st.spinner("Loading model..."):
         try:
             model = load_model_cached(DEFAULT_MODEL_PATH)
-        except Exception as e:
-            st.error(f"Failed to load model: {e}")
+        except (FileNotFoundError, OSError) as error:
+            st.error(f"Failed to load model: {error}")
             st.stop()
 
     st.subheader("CSV preview")
     table_section("", df.head(20))
 
     try:
-        output = predict_dataframe(model, df)
-    except Exception as e:
-        st.error(f"Prediction error: {e}")
+        result = run_prediction(model, df)
+    except ValueError as error:
+        st.error(f"Prediction error: {error}")
         st.stop()
 
     st.subheader("Results")
-    table_section("", output)
+    table_section("", result.predictions)
 
-    try:
-        save_results(output, RESULTS_PATH)
-        st.info(f"Saved results to {RESULTS_PATH}")
-    except Exception:
-        pass
-
-    if "consistency" in df.columns:
-        try:
-            gt_map = {"soft": 0, "non-soft": 1}
-            y_true = df["consistency"].map(gt_map).fillna(df["consistency"]).astype(int)
-            y_prob = output["proba_non_soft"].values
-            y_pred = output["predicted_label"].values
-            compute_and_show_metrics(y_true, y_prob, y_pred)
-        except Exception as e:
-            st.warning(f"Could not compute metrics: {e}")
-
-    results_download_button(output)
+    _save_predictions(result.predictions)
+    _show_metrics_if_available(result)
+    results_download_button(result.predictions)
 
 
 def render_individual_patient_tab():
-    import streamlit as st
-
-    from adenopredict.inference import predict_dataframe
-
-    from .config import DEFAULT_MODEL_PATH
-    from .model import load_model_cached
-
     st.subheader("Individual Patient Analysis")
     st.markdown("Enter patient data below to predict tumor consistency.")
 
@@ -138,22 +125,16 @@ def render_individual_patient_tab():
         )
         submitted = st.form_submit_button("Predict")
 
-    if submitted:
-        # Prepare single-row DataFrame
-        input_df = pd.DataFrame(
-            {
-                "age": [age],
-                "sex": [sex],
-                "diameter": [diameter],
-                "adc": [adc],
-            }
-        )
-        try:
-            model = load_model_cached(DEFAULT_MODEL_PATH)
-            result = predict_dataframe(model, input_df)
-            st.success(
-                f"Probability of non-soft consistency: {result['proba_non_soft'].iloc[0]:.2%}"
-            )
-            st.info(f"Predicted consistency: {result['predicted_consistency'].iloc[0]}")
-        except Exception as e:
-            st.error(f"Prediction error: {e}")
+    if not submitted:
+        return
+
+    input_df = pd.DataFrame({"age": [age], "sex": [sex], "diameter": [diameter], "adc": [adc]})
+    try:
+        model = load_model_cached(DEFAULT_MODEL_PATH)
+        prediction = run_prediction(model, input_df).predictions
+    except (FileNotFoundError, OSError, ValueError) as error:
+        st.error(f"Prediction error: {error}")
+        return
+
+    st.success(f"Probability of non-soft consistency: {prediction['proba_non_soft'].iloc[0]:.2%}")
+    st.info(f"Predicted consistency: {prediction['predicted_consistency'].iloc[0]}")

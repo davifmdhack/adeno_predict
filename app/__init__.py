@@ -1,9 +1,9 @@
-from .layout import render_header, render_created_by_box, render_footer
+from .data import load_example_dataframe, save_results
+from .hide_header import hide_header
+from .layout import render_created_by_box, render_footer, render_header
 from .metrics import compute_and_show_metrics
 from .model import load_model_cached
-from .data import load_example_dataframe, save_results
 from .utils import image_to_data_uri
-from .hide_header import hide_header
 
 __all__ = [
     "render_header",
